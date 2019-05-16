@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <link rel="stylesheet" href="/styles.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"> </script>
+        <title>Andrii Dubas' homepage</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="Keywords" content="Dubas">
+        <meta name="Description" content="Andrii Dubas' personal page">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    </head>
+    <style>
+        #app_container {
+            padding: 10px;
+            max-width: 100%;
+            width: 70%;
+            position: absolute;
+            top: 50px;
+            bottom: 0;
+            height: 70%;
+        }
+        canvas {
+            width: 100%;
+            height: 100%;
+            border: 1px solid black;
+        }
+    </style>
+
+    <body>
+        <div id="topmenu"></div>
+        <div id="app_container">
+            <p>
+                <input id="algo_input" value="" style="margin-bottom: 10px"></input>
+                <button id="start" onclick='start_algo()'> start </button>
+            </p>
+            <p>
+                <button id="prevStateButton" onclick='set_previous_state()' disabled> &lt; </button>
+                <button id="appendButton" onclick='append_letter()' disabled> &gt; </button>
+            </p>
+            <span>remainder:</span><span id="var-remainder"></span>
+            <p><span>text:</span><span id="var-text-progress" style="white-space: nowrap;"></span></p>
+            <canvas></canvas>
+        </div>
+    </body>
+
+    <script>
+        $(function() { $("#topmenu").load('/templates/top-navi.html'); })
+    </script>
+
+    <script src="./dist/bundle.js"></script>
+</html>
+
+
